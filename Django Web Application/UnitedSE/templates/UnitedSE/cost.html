@@ -1,0 +1,23 @@
+ <form action="" method="post"> 
+ 	{% csrf_token %}
+	
+	<!--
+		<p><label for="date">Date:</label><input type="text" name="date" value= {% now "Y-m-d" %} /><	
+		<p><label for="cost">Cost:</label><input type="text" name="cost" value="0" id="cost" /></p>
+	-->
+	{{ form }}
+	<input type="submit" value="Submit" />
+</form> 
+
+{{ error }}
+
+ 	<!-- Start of table for cost and date dw-->
+ 	 <table border=1>
+ 	 	{% for cost in allcost %}
+  		<tr>
+  			<td>{{ cost.date }}</td>
+  			<td>{{ cost.cost }}</td>
+  		</tr>
+  		{% endfor %}
+	</table> 
+<!-- End of table for cost and date dw-->

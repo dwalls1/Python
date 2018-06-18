@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block body %}
+
+ <style>
+.jumbotron {
+    background-color: #f4511e; /* Orange */
+    color: #ffffff;
+}
+</style>
+
+ <div class="jumbotron text-center">
+  
+  <h1>{{ page.title }}</h1>
+<p>{{ page.content }}</p>
+</div>
+
+ <style>
+.nav-tabs li a {
+    color: #777;
+}
+</style>
+
+
+<form method="post" action="">
+    {{ page.myforms }}
+</form>
+
+
+
+
+<!-- start of name form dw-->
+ <form method="post" action="">
+    {{ page.newforms }}
+</form> 
+ <!-- end of form dw-->
+
+
+
+
+ 	<!-- Start of table for comments dw-->
+ 	 <table border=1>
+ 	 	{% for comment in page.comments %}
+  		<tr>
+  			<td>{{ comment.message }}</td>
+  			<td>{{ comment.created_time }}</td>
+  		</tr>
+  		{% endfor %}
+	</table> 
+<!-- End of table dw-->
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Facebook</h3>
+      <img id="myImg" src="#" alt="your image" width="300" height="300"/>
+      <input type="file" name="vehicle" value="Bike"> 
+      <button type="button" class="btn btn-primary">Click</button> 
+    </div>
+    	
+ 	
+    <div class="col-sm-4">
+      <h3>Twitter</h3>
+        <button type="button" class="btn btn-primary">Click</button> 
+    </div>
+    
+    
+    <div class="col-sm-4">
+      <h3>Instagram</h3>
+      <button type="button" class="btn btn-primary">Click</button> 
+    </div>
+  </div>
+</div>
+
+<h3 class="text-center">Info</h3>
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#home">Darion</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+    <h2>Darion Walls, Co-Creator</h2>
+    <p>A man of many talents whom skills are only becoming more refine.</p>
+  </div>
+  
+
+ 
+
+
+
+{% endblock %}
+
+
+
